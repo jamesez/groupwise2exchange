@@ -1,0 +1,9 @@
+groupwise:
+    endpoint: http://gr.oup.wise.ser.ver:7191/soap
+    key_name: API Key Name
+    key: ABCDEF01234567890ABCEDF01234567890ABCEDF01234567890ABCEDF0123456
+    calendar_cap: 2011-01-01
+
+exchange:
+    endpoint: https://ex.cha.ge.ser.ver/ews/Exchange.asmx
+

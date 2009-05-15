@@ -1,0 +1,43 @@
+This tool converts GroupWise calendars and contacts to Exchange, using the GW7
+SOAP interface and Exchange's EWS SOAP interface.
+
+General use:
+
+  1. Generate an API key for GroupWise.  I used the VBNet_Trusted sample code
+     available from http://developer.novell.com/wiki/index.php/Tapp_samples.
+     You will need the NDK to get gwapp.dll, which just has to be in the
+     same directory as the included debug build.  If you can't generate an
+     API key, you can modify the login code to use the user's username
+     and password.
+
+  2. Put the key information and the various server names into config.yaml.
+     Generally speaking EWS should be on your Exchange 2007 CAS server.  This
+     tool was written against Exchange 2007, all bets are off if you're on
+     something else.
+
+  3. Run the contact-blender.rb or calendar-blender.rb to do the conversion.
+     You will need to know the user's AD / Exchange password in this version,
+     although I imagine you might be able to modify the code to do it through
+     delegation.  If you do, you might need to change the exchange driver to
+     include the delegation information.
+
+I've included some scaffolding that helped me figure out the object model,
+and a tool to delete everything in an exchange calendar, which was useful for
+debugging.
+
+----
+
+Copyright (c) 2009 The Regents of the University of Michigan
+Written by Jim Zajkowski <jamesez@umich.edu>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
